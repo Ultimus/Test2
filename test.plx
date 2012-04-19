@@ -1,7 +1,7 @@
 #!usr/bin/perl
 
 use warnings;
-use static;
+use strict;
 
-qq/Jo/qq;
+print "Jo";
 
