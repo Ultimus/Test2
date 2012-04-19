@@ -3,5 +3,5 @@
 use warnings;
 use static;
 
-print "Hello World\n"
+qq/Jo/qq;
 
