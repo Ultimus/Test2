@@ -1,0 +1,36 @@
+Abgabe: 31.07.10
+
+Aufgabenverteilung
+
+Noch zu erledigen:
+	Threads
+	Spielmenue
+	Pause
+	Highscoreuebertragung
+	Spielende
+	2. Towertyp
+	Bessere Angriffstaktik der Tower 
+		(es wird das 1. Element der Liste angegriffen, 
+		 besser waere das anzugreifen was naeher am Schatz ist)
+
+
+Michael Birkhoff: 
+	GUI, Hauptmenue, Grafiken
+	- Pixelgenaues Raster 
+	- Animation fuer Monster
+	
+Philip Baues: 
+	GUI, Gegner, Tower
+	- Tueme abreissen
+	- Tuerme upgraden
+	
+Mirko Oleszuk: 
+	- Sounds fuer Treffer
+	- Animation fuer Projektile
+	- Highscore Liste
+	
+Bastian Hustaedte: 
+	Tower-Upgrades, Gegner-Upgrades/Typen
+	
+Max Arendt: 
+	Gegner-Wellen, Angriffs-Taktik

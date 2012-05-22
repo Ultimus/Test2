@@ -1,0 +1,38 @@
+package TowerAlpha;
+
+public class Floss extends Enemy {
+	
+
+	static double speed = 1.85;
+	
+public Floss(int xPar, int yPar){
+		
+		super(xPar, yPar, speed);
+			this.hp = 14; // Beispiel jede Jank hat 10 HP muss nicht im Konstrukter uebergeben werden Change 13.05
+			this.direction = 1;
+			this.width = 100;
+			this.heigth = 60;
+			this.bounty = 50;
+			this.type = 2;
+			//this.type = (int)(1+Math.random()*2); // definiert aussehen floss oder schiff
+	}
+	
+	public Floss(int xPar, int yPar, int additionalHP){
+		
+		super(xPar, yPar, speed);
+			this.hp = 14+additionalHP; // Beispiel jede Jank hat 10 HP muss nicht im Konstrukter uebergeben werden Change 13.05
+			this.direction = 1;
+			this.width = 100;
+			this.heigth = 60;
+			this.bounty = 50;
+			this.type = 2;
+			//this.type = (int)(1+Math.random()*2); // definiert aussehen floss oder schiff
+	}
+	
+	public void setPos(int xPar, int yPar){
+		
+		super.setPos(xPar, yPar);
+		
+	}
+
+}
