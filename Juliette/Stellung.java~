@@ -7,3 +7,14 @@ public class Stellung{
 		this. picture = picture;
 		this. text= text;
 	}
+	public void setid(int id){
+		this.id=id;
+	}
+	public int getid(){
+		return this.id;
+	}
+
+	
+
+
+}

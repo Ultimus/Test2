@@ -50,9 +50,12 @@ public static void main (String args[]){
 public void actionPerformed(ActionEvent e){
 	if(e.getSource() == end)
 		System.exit(1);
-	if(e.getSource() == start)
-		System.out.println("Hello!\n");
+	if(e.getSource() == start){
+		Engine a = new Engine();
+		Stellung s =a.roll();
+		System.out.println("Stellung:"+ s.getText());
 		System.exit(1);
+	}
 
 }
 }

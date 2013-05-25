@@ -1,25 +1,21 @@
 import java.util.HashMap;
 public class Engine{
 
-	public HashMap setupDatabase(){
-		HashMap<Number, Stellung> map = new HashMap<Number, Stellung>();
-		Stellung atergo = new Stellung(1,"","Von Hinten");
-		Stellung reiten= new Stellung(2,"", "Frau oben");
-		Stellung neunundsechzig = new Stellung (3, "", "69");
+	public Stellung[] setupDatabase(){
+		Stellung[] Kamasutra = new Stellung[3];
+		Kamasutra[0] = new Stellung(1,"","Von Hinten");
+		Kamasutra[1]= new Stellung(2,"", "Frau oben");
+		Kamasutra[2] = new Stellung (3, "", "69");
 		
-		map.put(1, atergo);
-		map.put(2, reiten);
-		map.put(3, neunundsechzig);
-		return map;
+		return Kamasutra;
 	} 
 
-	public void roll (){
-		int num = (int)Math.random() * (3-1)+ 1;
-		HashMap<Number, Stellung> map;
-		map = setupDatabase();
-
-
-		
+	public Stellung roll(){
+		//int num = (int)Math.random() *40 + 1;
+		double RNG = Math.random()*3;
+		System.out.println("RNG: "+RNG); 
+		Stellung[] Kamasutra = setupDatabase();
+		return Kamasutra[(int)RNG];
 	}
 			
 
