@@ -7,6 +7,7 @@ import java.awt.event.*;
 public class Menu extends JFrame implements ActionListener{
 	JButton end = new JButton("Beenden");
 	JButton start = new JButton("Start");
+	JFrame frame = new JFrame("Juliette");
 	
 	
 
@@ -37,7 +38,7 @@ public class Menu extends JFrame implements ActionListener{
 
 public static void main (String args[]){
 	Menu w = new Menu("Juliette");
-	JFrame frame;
+	
 	w.setLayout(null);
 	w.setVisible(true);
 	w.setResizable(false);
@@ -53,9 +54,21 @@ public void actionPerformed(ActionEvent e){
 	if(e.getSource() == start){
 		Engine a = new Engine();
 		Stellung s =a.roll();
+		showIt(s);
 		System.out.println("Stellung:"+ s.getText());
-		System.exit(1);
+		//System.exit(1);
 	}
 
 }
+
+public void showIt (Stellung s){
+	frame.add(new JLabel(s.getText()));
+	frame.setSize(400,400);
+	frame.setVisible(true);
+
+	
+	
+}
+
+
 }
