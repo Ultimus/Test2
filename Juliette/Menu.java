@@ -62,9 +62,17 @@ public void actionPerformed(ActionEvent e){
 }
 
 public void showIt (Stellung s){
-	frame.add(new JLabel(s.getText()));
-	frame.setSize(400,400);
-	frame.setVisible(true);
+	switch(s.getId()){
+	case 1:
+	StdDraw.picture(0.5,0.5,"doggy.png");
+	break;
+	case 2:
+	StdDraw.picture(0.5,0.5,"cowgirl.png");
+	break;
+	case 3:
+	StdDraw.picture(0.5,0.5, "sixtynine.png");
+	break;
+	}
 
 	
 	
