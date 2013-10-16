@@ -1,0 +1,191 @@
+**********************************   B E I S P I E L  1   ***************************************************
+
+
+X = maus frisst gras grausam
+Y = mein Haus ist grauenvoll
+n = 24
+
+
+Ergebnis:
+
+m_____aus frisst gras grau______sam
+|     ||||  | ||     |||||         
+mein haus __i_st_____ grauenvoll___
+-----------------------------------
+m     aus   i st      grau         
+
+=> maus ist grau
+
+
+**********************************   B E I S P I E L  1  U M G E K E H R T  *********************************
+
+
+X = mein Haus ist grauenvoll
+Y = maus frisst gras grausam
+n = 24
+
+
+Ergebnis:
+
+mein haus __i_st_____ grau___envoll
+|     ||||  | ||     |||||         
+m_____aus frisst gras grausam______
+-----------------------------------
+m     aus   i st      grau         
+
+=> maus ist grau
+
+
+**********************************   B E I S P I E L  2   ***************************************************
+
+
+X = grauelaus
+Y = glasviren
+n = 3
+
+
+Ergebnis:
+
+g_ra____ue_laus
+|  |     |     
+gl_asvir_en____
+---------------
+g  a     e     
+
+=> gae
+
+
+**********************************   B E I S P I E L  2  U M G E K E H R T  *********************************
+
+
+X = glasviren
+Y = grauelaus
+n = 3
+
+
+Ergebnis:
+
+g_la_____sviren
+|  |     |     
+gr_auelaus_____
+---------------
+g  a     s     
+
+=> gas
+
+
+**********************************   B E I S P I E L  3   ***************************************************
+
+
+X = theredeweitcheseyeswatchthreesrwaketchweirdsisterattachesweedss
+Y = bathreekswitcheswwaitforweektchthreteaswaitttchhwaiterchecksbil
+n = 7
+
+
+Ergebnis:
+
+__therede__weitcheseyes_wa_________tchthre_e_srwa_ke__tc_hweirdsistera_t__tacheswe__eds___s
+  || || |  | ||||    || ||         ||||||| | | ||     || ||          | |    ||   |    |    
+bath_re_eksw_itch____eswwaitforweektchthreteas_wai__tttchhw__________aiter__ch___eck__sbil_
+-------------------------------------------------------------------------------------------
+  th re e  w itch    es wa         tchthre e s wa     tc hw          a t    ch   e    s    
+
+=> threewitcheswatchthreeswatchwatches
+
+
+**********************************   B E I S P I E L  3  U M G E K E H R T  *********************************
+
+
+X = bathreekswitcheswwaitforweektchthreteaswaitttchhwaiterchecksbil
+Y = theredeweitcheseyeswatchthreesrwaketchweirdsisterattachesweedss
+n = 7
+
+
+Ergebnis:
+
+bath_re_eksw_itch____eswwaitforweektchthreteas_wa__itttchhw__________a_it_erch____e__cksbil
+  || || |  | ||||    || ||         ||||||| | | ||     || ||          |  |   ||    |    |   
+__therede__weitcheseyes_wa_________tchthre_e_srwake___tc_hweirdsisterat_ta__chesweeds__s___
+-------------------------------------------------------------------------------------------
+  th re e  w itch    es wa         tchthre e s wa     tc hw          a  t   ch    e    s   
+
+=> threewitcheswatchthreeswatchwatches
+
+
+**********************************   B E I S P I E L  4   ***************************************************
+
+
+X = ETKETTKEEAATEKKETTEKTKTETAMAEAAETEK
+Y = AKKEMTKEAETEKEKEMAAEKKEEKKEAATTEKKT
+n = 5
+
+
+Ergebnis:
+
+__etke_ttke_eaatek_ke___ttek_tk_te_t__ama_eaaete_k_
+    ||  ||| |  ||| ||     |   |  |    | |     || | 
+ak__kem_tkeae__tekekemaa__e_k_ke_ek_kea_at____tekkt
+---------------------------------------------------
+    ke  tke e  tek ke     e   k  e    a a     te k 
+
+=> ketkeetekkeekeaatek
+
+
+**********************************   B E I S P I E L  4  U M G E K E H R T  *********************************
+
+
+X = AKKEMTKEAETEKEKEMAAEKKEEKKEAATTEKKT
+Y = ETKETTKEEAATEKKETTEKTKTETAMAEAAETEK
+n = 5
+
+
+Ergebnis:
+
+__akke_mtk_eae_tekeke__maae__k_ke_ek___keaat__tekkt
+    ||  || ||  ||| ||     |  |  |       | |   || | 
+et__ket_tkeea_atek_kett___ektkt_et__ama_e_a_aete_k_
+---------------------------------------------------
+    ke  tk ea  tek ke     e  k  e       e a   te k 
+
+=> ketkeatekkeekeeatek
+
+
+**********************************   B E I S P I E L  5   ***************************************************
+
+
+X = DerTxetKnanTtolaerBoelsdinnSienUndDuKnasntEsTorztedmOnhePorbelmeLseenOedrAcuhNchitSmitmtEs
+Y = DerTextKannTotalerBloedsinnSeinUndDuKannstEsTrotzdemOhneProblemeLesenOderAuchNichtStimmtEs
+n  = 9
+
+
+Ergebnis:
+
+dert_xetk_n_ant_t_olaerb_oe_lsdinns_ienundduk__nasntest_o_rz_tedmo_n_hep_orb_elmel_seeno_edra_cuhn_chits__mitmtes
+|||| | ||    || |  | ||| ||  | |||| | |||||||  | | |||| |  |  | ||    || | | | ||| | ||| | || | || || ||  |  ||||
+dertex_tka_n_ntota_l_erbloed_s_innsei_nunddukann_s_testrot_zd_e_moh_n_epro_ble_meles_enode_rauc_hnich_tstim__mtes
+-----------------------------------------------------------------------------------------------------------------
+dert x tk    nt t  l erb oe  s inns i nundduk  n s test o  z  e mo    ep o b e mel s eno e ra c hn ch ts  m  mtes
+
+=> dertxtknttlerboesinnsinundduknstestozemoepobemelsenoerachnchtsmmtes
+
+
+**********************************   B E I S P I E L  5  U M G E K E H R T  *********************************
+
+
+X = DerTextKannTotalerBloedsinnSeinUndDuKannstEsTrotzdemOhneProblemeLesenOderAuchNichtStimmtEs
+Y = DerTxetKnanTtolaerBoelsdinnSienUndDuKnasntEsTorztedmOnhePorbelmeLseenOedrAcuhNchitSmitmtEs
+n  = 9
+
+
+Ergebnis:
+
+dert_extk_a_n_nto_talerbloe__dsinns_einundduk_a_nnstest_r_ot_zdemo_h_nep_rob_lemel_eseno_dera_uchnich_ts__timmtes
+|||| | ||   |  ||  | ||| ||  | |||| | ||||||| |  | |||| |  |  | ||    || | | | ||| | ||| | || | || || ||  |  ||||
+dertxe_tkn_ant_tol_a_erb_oelsd_innsie_nundduknas_n_testorz_te_d_mon_h_epor_bel_melse_enoed_racu_hn_chitsmit__mtes
+-----------------------------------------------------------------------------------------------------------------
+dert e tk   n  to  a erb oe  d inns e nundduk a  n test r  t  d mo    ep r b l mel e eno d ra u hn ch ts  t  mtes
+
+=> dertetkntoaerboedinnsenunddukantestrtdmoeprblmeleenodrauhnchtstmtes
+
+
+

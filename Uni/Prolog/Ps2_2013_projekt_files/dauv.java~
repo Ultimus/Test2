@@ -1,0 +1,10 @@
+public class dauv{
+	public static void main (String [] args){
+	int a = 7;
+	int b = 22;
+	
+	while(b>20)b--;
+	
+	int c = b;
+	}
+}

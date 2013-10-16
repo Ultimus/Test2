@@ -1,0 +1,4 @@
+public class Katzen{
+public static void main (String args[]){
+System.out.println ("%d Kanäle und alles voller %s%n", 200, "Katzen");+
+}}

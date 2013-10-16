@@ -1,0 +1,6 @@
+0:	iconst_2
+1:	dup
+2:	dup
+3:	idiv
+4:	ineg
+5:	return

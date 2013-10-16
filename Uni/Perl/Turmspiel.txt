@@ -1,0 +1,2 @@
+Es verliert derjenige Spieler der eine ungerade Zahl an Farbwechseln durchführt. Der Turm startet auf einem weissen Feld. Wechselt er auf ein schwarzes Feld ist das ein Farbwechsel.
+

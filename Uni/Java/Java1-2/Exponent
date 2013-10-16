@@ -1,0 +1,7 @@
+public class Exponent{
+public static void main (String atgs[]){
+int i, j = Integer.parseInt (args[0,1])
+
+System.out.println (i pow j);
+}}
+

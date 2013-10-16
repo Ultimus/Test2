@@ -1,0 +1,34 @@
+#!usr/bin/perl
+
+use strict;
+use warnings;
+
+my $x = 2;
+my $y = 2;
+#x^y soll berechnet werden
+my $control = $x**$y;
+my $x__ = $x;
+my $run = $x;
+my $x_ = 0;
+$y--;
+
+while ($y != 0){
+	while ($run != 0){
+		$x_ += $x; 
+		$run--;
+		print "$x_\n";
+	}
+	$x = $x_;
+	$y--;
+	$run = $x__-1;
+
+}
+
+
+
+print "$x_\n";
+
+print "Stimmt \n" if ($control == $x_);
+ 
+
+

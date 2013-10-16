@@ -1,0 +1,13 @@
+0:	iconst_2
+1:	istore_1
+2:	iconst_2
+3:	istore_2
+4: 	iconst_4
+5:	istore_3
+6:	iload_2
+7:	iconst_3
+8: 	if_icmple 
+9:	iload_1
+10: 	ipow
+11: 	goto 2
+12:  return

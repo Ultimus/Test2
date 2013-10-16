@@ -1,0 +1,23 @@
+   0:	iconst_2
+   1:	istore_1
+   2:	iconst_5
+   3:	istore_2
+   4:	iload_2
+   5:	istore_3
+   6:	iconst_1
+   7:	istore	4
+   9:	iload_3
+  10:	iconst_2
+  11:	iconst_3
+  12:	idiv
+  13:	idiv
+   10:	ifle	25
+   13:	iinc	3, -1
+   16:	iload	4
+   18:	iload_1
+   19:	imul
+   20:	istore	4
+   22:	goto	9
+   25:  println 4
+   27:  return
+ 

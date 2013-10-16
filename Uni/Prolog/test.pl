@@ -1,0 +1,14 @@
+s --> np, vp,!.
+np --> npsum, coord, noun.
+npsum --> noun.
+npsum --> noun, comma , npsum.
+vp --> iv.
+
+
+noun-->"Joe".
+noun-->"Mary".
+noun-->"Tim".
+noun-->"Frank".
+iv-->"walk".
+comma-->",".
+coord-->"and".

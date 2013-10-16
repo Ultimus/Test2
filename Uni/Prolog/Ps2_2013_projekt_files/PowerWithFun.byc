@@ -1,0 +1,14 @@
+   0:	iload_1
+   1:	istore_2
+   2:	iconst_1
+   3:	istore_3
+   4:	iload_2
+   5:	ifle	18
+   8:	iinc	2, -1
+   11:	iload_3
+   12:	iload_0
+   13:	imul
+   14:	istore_3
+   15:	goto	4
+   18:	iload_3
+   19:	ireturn

@@ -1,0 +1,139 @@
+% Eingabe in String ohne Whitespace umwandeln 
+clear_input(Input,Result):-
+	clear_input(Input,[],Result),!.
+
+clear_input([], Acc, Result):-
+	reverse(Acc, Result).
+
+clear_input([H|T], Acc, Result):-
+	(
+		H=9;
+		H=10;
+		H=13;
+		H=32
+	),
+	clear_input(T,Acc, Result).
+
+clear_input([H|T], Acc, Result):-
+	clear_input(T,[H|Acc],Result).
+
+
+% parse(ProgrammSource, SyntaxTree)
+
+parser(Input, AST):-
+	clear_input(Input, Result),
+	parse_instructions(AST, Result,[]), !.
+
+
+/******************************************
+* Grammatik:
+
+* S-> assignment | loop | if | if-else | pass
+* assignment -> var() ":=" expression()
+* var -> x Number
+* number -> {0,...,9}number
+* loop -> "LOOP" var "DO" instruction() "END"
+* if -> "IF" expression() "=" expression() "THEN" instruction() "END" | "IF" expression() "=" expression() "THEN" instruction() "ELSE"   instruction() "END"
+* expression -> term() "+" expression | term() "-" expression | term()
+* term -> factor() "*" term() | factor() "**" term() | factor()
+* factor -> number() | var() | "-" factor | "(" expression() ")"
+
+*********************************************/
+
+
+parse_instructions(AST)--> assignment(AST).
+
+parse_instructions(AST)--> assignment(Left),";",parse_instructions(Right), {AST=parse_instructions(Left,Right)}.
+
+parse_instructions(AST)--> loop(AST).
+
+parse_instructions(AST)--> loop(Left),";",parse_instructions(Right), {AST=parse_instructions(Left,Right)}.
+
+parse_instructions(AST)--> if(AST).
+
+parse_instructions(AST)--> if(Left),";",parse_instructions(Right), {AST=parse_instructions(Left,Right)}.
+
+parse_instructions(AST)--> pass(AST).
+
+parse_instructions(AST)--> pass(Left), ";", parse_instructions(Right), {AST= parse_instructions(Left,Right)}.
+
+
+
+
+assignment(AST)-->var(Left),":=",expression(Right),{AST=assign(Left,Right)}.
+
+var(AST)-->"x",number(Num),{AST=x(Num)}.
+
+
+
+loop(AST)-->"LOOP",var(Var),"DO",parse_instructions(Instructions),"END",{AST=loop(Left,Right)}.
+
+if(AST)--> "IF",expression(Exp1),"=",expression(Exp2),"THEN",parse_instructions(Inst),"END",{AST=if(Exp1,Exp2,Inst)}.
+
+% if_else
+
+if(AST)-->"IF",expression(Leftexp),"=",expression(Rightexp),
+	"THEN",parse_instructions(Leftinst),
+	"ELSE",parse_instructions(Rightinst),"END",
+	{AST=if(Leftexp,Rightexp,Leftinst,Rightinst)}.
+
+pass(AST)--> "PASS", {AST = pass}. 
+
+expression(AST)-->term(Term),"+",expression(Exp),{AST=add(Term,Exp)};
+		  term(Term),"-",expression(Exp),{AST=sub(Term,Exp)};
+		  term(AST).
+
+term(AST) --> factor(Fac),"*",term(Term),{AST=mul(Left,Right)};
+	    factor(Fac),"**",term(Term),{AST=pow(Fac,Term)};
+	    factor(Fac).
+
+
+factor(AST) --> number(AST);
+	      var(AST);
+	      "-",factor(Fac),{AST=signed(Fac)};
+	      "(",expression(Exp),")",{AST=bracket(Exp)}.
+
+number(AST) --> /*("0"; "1"; "2"; "3"; "4"; "5"; "6"; "7"; "8"; "9"),
+		(number(AST);"").
+*/
+		"0" , { AST = 0 } ;
+		firstdigit( AST ) ;
+		firstdigit(First), 
+		nextDigits( [], Next ), 
+		{ append( [First], Next, List ), 
+		atomic_list_concat(List,X), 
+		atom_number(X, AST) }.
+
+
+nextDigits( Acc, Next )-->"1", { append([1], Acc, Next)}; 
+			"2", { append([2], Acc, Next)};
+			"3", { append([3], Acc,Next)};
+			"4", { append([4], Acc, Next)};	
+			"5", { append([5], Acc, Next)};	
+			"6", { append([6], Acc, Next)};
+			"7", { append([7], Acc, Next)};
+			"8", { append([8], Acc, Next)};	
+			"9", { append([9], Acc, Next)};
+			"0", { append([0], Acc, Next)};	
+			"1", nextDigits(Acc,NextAcc),{append([1], NextAcc,Next)};
+			"2", nextDigits( Acc , NextAcc ), { append(  [2], NextAcc, Next ) }  ; 
+			"3", nextDigits( Acc , NextAcc ), { append(  [3], NextAcc, Next ) }  ; 
+			"4", nextDigits( Acc , NextAcc ), { append(  [4], NextAcc, Next ) }  ; 
+			"5", nextDigits( Acc , NextAcc ), { append(  [5], NextAcc, Next ) }  ; 
+			"6", nextDigits( Acc , NextAcc ), { append(  [6], NextAcc, Next ) }  ;
+			"7", nextDigits( Acc , NextAcc ), { append(  [7], NextAcc, Next ) }  ; 
+			"8", nextDigits( Acc , NextAcc ), { append(  [8], NextAcc, Next ) }  ; 
+			"9", nextDigits( Acc , NextAcc ), { append(  [9], NextAcc, Next ) }  ; 
+			"0", nextDigits( Acc , NextAcc ), { append(  [0], NextAcc, Next ) }  .
+            	
+firstdigit(AST)	--> "1", { AST = 1 }; 
+			"2", { AST = 2 }; 
+			"3", { AST = 3 };
+			"4", { AST = 4 };
+			"5", { AST = 5 } ; 
+			"6", { AST = 6 } ;
+ 			"7", { AST = 7 } ; 
+			"8", { AST = 8 } ; 
+			"9", { AST = 9 } .
+          
+ 

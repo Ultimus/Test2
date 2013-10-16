@@ -1,0 +1,24 @@
+public class PerfekteZahl{
+public static void main (String args[]){
+int zahl = Integer.parseInt [0];
+
+int sum = 0;
+boolean next = false; // für Aufgabenteil b
+for (int i = 1; j <= zahl; ++j)
+{
+	for(int i = 1; i < j; ++i)
+	{
+		sum += (((j % i) == 0) ? i : 0);
+	}
+	if (sum == j)
+	{
+		System.out.println ("Die eingegebene Zahl ist eine perfekte Zahl");
+	}
+	else {
+	System.out.println ("Die eingegebene zahl ist keine perfekte zahl.");
+	}
+for (sum == j || sum != i; 
+sum += (((j%i( == 0) ? i:0);
+System.out.println (sum);
+}
+}

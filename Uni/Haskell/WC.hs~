@@ -1,0 +1,2 @@
+main = interact words
+	where words input = show (length ([char] input)) ++ "\n"

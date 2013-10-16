@@ -1,0 +1,16 @@
+	0:	new #1
+	1:	dup
+	2:	astore_0
+	3:	iconst_0
+	4:	putfield #4
+	5:	aload_0
+	6:	iconst_5
+	7:	putfield #5
+	8:	aload_0
+	9:	getfield #4
+	10:	aload_0
+	11:	getfield #5
+	12:	iadd
+	13:	istore_0
+	14:	println 0
+	15: return

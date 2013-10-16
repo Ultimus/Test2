@@ -1,0 +1,26 @@
+   0:	sipush	100
+   3:	istore_0
+   4:	iload_0
+   5:	istore_1
+   6:	iconst_1
+   7:	istore_2
+   8:	iload_1
+   9:	ifle	38
+   12:	iinc	1, -1
+   15:	iload_0
+   16:	istore_3
+   17:	iload_3
+   18:	ifle	35
+   21:	iinc	3, -1
+   24:	iload_2
+   25:	iload_1
+   26:	iadd
+   27:	iload_3
+   28:	iadd
+   29:	iload_0
+   30:	irem
+   31:	istore_2
+   32:	goto	17
+   35:	goto	8
+   38:	iload_2
+   39:	ireturn

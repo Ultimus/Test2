@@ -1,0 +1,51 @@
+8.3. a)
+
+(1) ~a
+(2) a => ~b (a impliziert nicht b) a true => b false
+(3) r == ~(a == b) & (c <=> (a&b))
+
+
+
+b) 
+
+(1)  a: w w f f 
+	b: w f w f
+	e: w f w w 
+
+
+(2)  a: w w f f 
+	!b: w f w f
+	e: f w f f.   nur wahr wenn a wahr ist und impliziert das b falsch ist
+
+(3) a: w w f f 
+	e: tautologie
+
+(4) b w w f f 
+	e : wiederspruch
+
+(5) a w w f f 
+	b w f w f
+	e: w w f w
+
+(6) äquivalent zu (5)
+
+(7) w w f f 
+	w f w f 
+	w f w w
+
+(8) w w f f 
+	f f w w
+
+
+
+
+8.4
+a)
+
+y = 5
+
+b)
+-1
+
+c)
+

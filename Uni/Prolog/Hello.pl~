@@ -1,0 +1,2 @@
+mensch(sokrates).
+sterblich(X) :- mensch(X).

@@ -1,0 +1,3 @@
+javac -cp junit-4.8.2.jar:. Nullstellen2.java 
+java -cp  junit-4.8.2.jar:. org.junit.runner.JUnitCore Nullstellen2
+java -cp blaaaah Nullstellen2

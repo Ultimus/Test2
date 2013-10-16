@@ -1,0 +1,14 @@
+#!usr/bin/perl
+
+use strict;
+use warnings;
+
+my $_ = 14;
+until ($_ > 18){
+print ("Gruppe$_: \n");
+system("cd /home/maximilian/Arbeitsfläche/Uni/Propra/gruppe$_  && git pull");
+system("cd /home/maximilian/Arbeitsfläche/Uni/Propra/gruppe$_ && git reset --hard");
+$_++;
+}
+
+

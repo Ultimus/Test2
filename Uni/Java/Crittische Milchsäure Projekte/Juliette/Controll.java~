@@ -1,0 +1,16 @@
+
+import javax.swing.*;
+public class Controll {
+	public static void main (String args[]){
+	Menu w = new Menu("Juliette");
+	JFrame frame;
+	w.setLayout(null);
+	w.setVisible(true);
+	w.setResizable(false);
+	w.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
+	w.setSize(640,480);
+
+	w.setLocationRelativeTo(null);
+
+	}
+}

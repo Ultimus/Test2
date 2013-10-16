@@ -1,0 +1,9 @@
+plattfuss(x) :- keine_ahnung_von_fussball(x).
+blockfloete(x) :- isst_chinesisch(x).
+weichei(x) :- date_double(x).
+jesuslatschen(x) :- vegetarier(x).
+isst_chinesisch(x) :- \+date_double(x).
+keine_ahnung_von_fussball(x) :- weichei(x).
+blockfloete(x) :- angelschein(x).
+vegetarier(x) :-plattfuss(x).
+

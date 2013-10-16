@@ -1,0 +1,31 @@
+et(terach,abraham).
+et(terach,nachor).
+et(terach,haran).
+et(sarah,isaac).
+et(abraham,isaac).
+et(haran,milcah).
+et(haran,lot).
+et(haran,yiscah).
+
+fem(sarah).
+fem(milcah).
+fem(yilscah).
+masc(terach).
+masc(abraham).
+masc(nachor).
+masc(haran).
+masc(isaac).
+masc(lot).
+
+vater(X,Y):-et(X,Y),masc(X).
+mutter(X,Y):-et(X,Y),fem(X).
+sohn(X,Y):-et(Y,X),masc(X).
+tochter(X,Y):-et(Y,X),fem(X).
+
+grossvater(X,Y):-vater(X,Z),et(Z,Y).
+
+% bruder (X,Y) :- et(Z,X), et(Z,Y), masc(X).
+
+% X ist Bruder von Y, wenn der Vater von X, der vater von Y ist
+
+

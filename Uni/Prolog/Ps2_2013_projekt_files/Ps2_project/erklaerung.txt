@@ -1,0 +1,10 @@
+Ich habe mich dazu entschlossen unbenutzte Variablen und definate Assignment als Wahlaufgabe zu machen.
+Man läd die Datei da_uv.pl in seinem Swi Prolog interpreter. Die javabc_parse.pl sollte sich im selben Ordner befinden.
+Die Analyse wird ausgeführt, indem man "parse('<Dateiname>'), analyse(X)." eingibt.
+
+Die Implementierung hat folgendes Problem: Es kann dazu kommen, dass nach mehrmaligem aufrufen des analyse Prädikats eine Endlosschleife ausgeführt wird. Um das zu verhindern kann man einfach den Interpreter neu laden.
+
+Meine Implementierung hat als Grundstock die javabc_interpreter.pl Datei. Diese habe ich gekürzt auf die wichtigsten Elemente. Ich habe mir gedacht, dass eine Variable definiert ist, wenn istore aufgerufen wird. Wird die Variable benutzt muss iload aufgerufen werden. Dabei werden die Variablen mit den verschiedenen Tags used, defined und not_defined gekennzeichnet. 
+not_defined kann eine Variable nur sein, wenn im javabc ein iload steht, ohne dass es die Konstante dazu gibt. 
+Die Tags sind meine abstrakte Domäne. Alle übrigen Operationen die auf den Variablen ausgeführt werden habe ich auf ein Minimum reduziert, besonders, da es nicht mehr interessiert, welchen Zahlenwert eine Variable am Ende einer interpretation hat.
+

@@ -1,0 +1,2 @@
+verbrauch :: (integral a, integral b) -> integral c
+verbrauch x y = 100/(x/y)

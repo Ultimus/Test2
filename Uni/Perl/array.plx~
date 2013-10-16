@@ -1,0 +1,16 @@
+#!usr/bin/perl
+
+use strict;
+use warnings;
+
+my @array = (1..9);
+
+$array[5] = 12;
+
+
+for (;@array;){ 
+push @array, 2 if ($_ % 3 == 0);
+my $_ = pop(@array);
+
+print "$_\n";
+}

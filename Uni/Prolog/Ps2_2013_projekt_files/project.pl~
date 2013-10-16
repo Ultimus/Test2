@@ -1,0 +1,6 @@
+instr(iop(/)1), --> "idiv",!.
+
+ex_op_concrete(/,A1,A2,R):- 
+	->(A2 == 0,	
+	Temp is A1/A2, R is floor(Temp);.
+	

@@ -1,0 +1,8 @@
+public class Legion{
+public static void main (String args[]){
+
+int i=;
+for (i = 1; 1<=1001; i++);
+System.out.println (i);
+}}
+

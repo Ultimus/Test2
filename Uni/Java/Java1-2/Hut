@@ -1,0 +1,10 @@
+public class Hut{
+ public static void main (String args[]){
+
+	int w;
+
+	for (int i = 0; i < 10; i++){
+		w = (int)Math.random()*3;
+		System.out.println (w);}
+}}
+

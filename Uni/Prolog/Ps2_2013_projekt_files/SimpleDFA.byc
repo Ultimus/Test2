@@ -1,0 +1,27 @@
+   0:	iload_0
+   1:	iconst_1
+   2:	isub
+   3:	istore	5
+   5:	iload_1
+   6:	istore	6
+   8:	iload_2
+   9:	istore	7
+   11:	iload	6
+   13:	ifle	45
+   16:	iload	5
+   18:	iconst_1
+   19:	iadd
+   20:	istore 5
+   22:	iload 6
+   24:	iconst_1
+   25:	isub
+   26:	istore	6
+   28:	iload	5
+   30:	bipush	10
+   32:	if_icmpge	38
+   35:	iload_3
+   36:	istore	7
+   38:	iload	4
+   40:	istore	5
+   42:	goto	11
+   45:  return

@@ -1,0 +1,8 @@
+s(NP1,Verb,NP2):- np(NP1), vp(Verb,NP2).
+vp(Verb,NP):-
+v(Verb), np(NP).
+v(klaut).
+v(klauen).
+np(paul).
+np(bananen).
+

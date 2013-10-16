@@ -1,0 +1,25 @@
+public class Fraction{
+
+	int zaehler;
+	int nenner;
+
+
+	public Fraction(int zaehler, int nenner){
+		this.zaehler = zaehler;
+		this.nenner = nenner;
+	}
+
+	public static void main (String[] args){
+		Fraction one = new Fraction(5,7);
+		Fraction two = new Fraction(8,9);		
+		Fraction result;
+		result = mul(one,two);
+		System.out.println ("Ergebniss mul: "+result.zaehler+" /"+ result.nenner);
+	}
+
+	public static Fraction mul(Fraction one, Fraction two){
+		return new Fraction(one.zaehler*two.zaehler, one.nenner*two.nenner);
+	}
+	
+}
+
