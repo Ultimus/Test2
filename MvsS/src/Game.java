@@ -1,4 +1,15 @@
+import sun.management.counter.Units;
+
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.LinkedList;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Random;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
 
 /**
  * Created with IntelliJ IDEA.
@@ -7,15 +18,54 @@ import java.util.LinkedList;
  * Time: 22:00
  * To change this template use File | Settings | File Templates.
  */
-public class Game {
+public class Game extends JFrame implements ActionListener,MouseListener {
 
 
 
     //Variables
-    int maxPlayers;
-    int actuallPlayer= 1;
-    LinkedList<Unit> grave = new LinkedList<Unit>();
-    LinkedList<Unit> units = new LinkedList<Unit>();
+    public int maxPlayers;
+    public Player actuallPlayer;
+    public Player p1;
+    public Player p2;
+    public LinkedList<Unit> grave = new LinkedList<Unit>();
+    public LinkedList<Unit> units = new LinkedList<Unit>();
+    MouseListener mouseListener;
+    public JButton gameEndButton;
+    public boolean turnEnd;
+
+
+
+
+    public Game(Player actualPlayer, Player p1, Player p2){
+        this.actuallPlayer = actualPlayer;
+        this.p1 = p1;
+        this.p2 = p2;
+
+        gameEndButton = new JButton("click mich!");
+        gameEndButton.addActionListener(this);
+
+        this.getContentPane().add(gameEndButton);
+    }
+
+
+    public static void main (String[] args){
+        boolean gameends = false;
+        Player actuallPlayer = new Player(1);
+        Player p1 = new Player(1);
+        Player p2 = new Player(2);
+        Game game = new Game(p1,p1,p2);
+        game.setUpField();
+
+        while(gameends != true){
+            actuallPlayer.newCard();
+            game.doTurn(actuallPlayer);
+            game.changePlayer();
+
+
+
+        }
+
+    }
 
 
 
@@ -46,9 +96,8 @@ public class Game {
     }
 
     public void changePlayer(){
-        int temp = actuallPlayer+1;
-        if (temp > maxPlayers) actuallPlayer = 1;
-        else actuallPlayer++;
+        if (this.actuallPlayer == p1) this.actuallPlayer = p2;
+        else this.actuallPlayer = p1;
 
     }
 
@@ -56,7 +105,7 @@ public class Game {
 
         int p1Length = units.size();
         Unit temp;
-        if (u.id == actuallPlayer){
+        if (u.id == actuallPlayer.getNumber()){
             if (tX < 24 && tX > -1 && tY < 60 && tY > -1){
                 for (int i = 0; i < p1Length-1; i++){
                      temp = units.get(i);
@@ -73,15 +122,96 @@ public class Game {
 
     }
 
-    public void doValidMove(int index, int x, int y){
-            Unit temp = units.get(index);
-            temp.setX(x);
-            temp.setY(y);
-            units.remove(index);
-            units.add(temp);
+    public void doValidMove(Unit unit, int x, int y){
+            unit.setX(x);
+            unit.setY(y);
+    }
+
+
+    public void doTurn(Player actuallPlayer){
+        while (turnEnd){
+
+        }
+        turnEnd = false;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e){
+        if(e.getSource() == gameEndButton) turnEnd = true;
+    }
+
+
+
+
+    @Override
+    public void mouseClicked(MouseEvent e){
+        //here is where all the magic will be
+        for( int i = 0; i < units.size(); i++){
+            Unit unit = units.get(i);
+            if (e.getX() == unit.getX() && e.getY() == unit.getY()){
+                unit.clicked = true;
+                unit.displayMoveRange();
+            }
+        }
+
+        //check if field is clicked, if unit is also clicked, check if move is valid, if so move, else make unit unclicked
+
+
 
     }
 
+    @Override
+    public void mouseExited(MouseEvent e){
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e){
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e){
+
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e){
+
+    }
+
+
+
+    public Player getActuallPlayer() {
+        return actuallPlayer;
+    }
+
+    public void setActuallPlayer(Player actuallPlayer) {
+        this.actuallPlayer = actuallPlayer;
+    }
+
+    public LinkedList<Unit> getGrave() {
+        return grave;
+    }
+
+    public void setGrave(LinkedList<Unit> grave) {
+        this.grave = grave;
+    }
+
+    public int getMaxPlayers() {
+        return maxPlayers;
+    }
+
+    public void setMaxPlayers(int maxPlayers) {
+        this.maxPlayers = maxPlayers;
+    }
+
+    public LinkedList<Unit> getUnits() {
+        return units;
+    }
+
+    public void setUnits(LinkedList<Unit> units) {
+        this.units = units;
+    }
 
 
 

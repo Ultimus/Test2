@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 
 public class Unit {
 
@@ -11,6 +12,11 @@ public class Unit {
 	int move;
 	int atk;
     int def;
+    int faction;
+    boolean clicked;
+    LinkedList<String> states= new LinkedList<String>();
+
+
 	
 	public Unit(int x, int y, int id){
 		this.x=x;
@@ -18,6 +24,10 @@ public class Unit {
         this.id = id;
 		
 	}
+
+    public void displayMoveRange(){
+
+    }
 
     public int getY() {
         return y;
@@ -89,6 +99,22 @@ public class Unit {
 
     public void setX(int x) {
         this.x = x;
+    }
+
+    public int getFaction() {
+        return faction;
+    }
+
+    public void setFaction(int faction) {
+        this.faction = faction;
+    }
+
+    public LinkedList<String> getStates() {
+        return states;
+    }
+
+    public void setStates(LinkedList<String> states) {
+        this.states = states;
     }
 
 }
